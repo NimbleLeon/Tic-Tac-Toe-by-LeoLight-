@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Крестики-нолики 🎮</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎮 Крестики-нолики</h1>
+            <p class="subtitle">Классическая игра!</p>
+        </header>
+
+        <main class="game-container">
+            <!-- Настройки игры -->
+            <div class="game-settings">
+                <div class="setting-group">
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider"></span>
+                        <span class="switch-label">Тёмная тема</span>
+                    </label>
+                </div>
+                
+                <div class="setting-group">
+                    <label class="switch">
+                        <input type="checkbox" id="aiModeToggle">
+                        <span class="slider"></span>
+                        <span class="switch-label">Играть с компьютером</span>
+                    </label>
+                </div>
+
+                <div class="difficulty-selector" id="difficultySelector">
+                    <label>Сложность:</label>
+                    <select id="difficultySelect">
+                        <option value="easy">Лёгкая</option>
+                        <option value="medium" selected>Средняя</option>
+                        <option value="hard">Сложная</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Статус игры -->
+            <div class="game-status" id="gameStatus">
+                Ход игрока: <span class="player-x">X</span>
+            </div>
+
+            <!-- Игровое поле -->
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <!-- Статистика -->
+            <div class="stats">
+                <div class="stat">
+                    <span class="player-x">Игрок (X)</span>
+                    <span id="scoreX">0</span>
+                </div>
+                <div class="stat">
+                    <span>Ничьи</span>
+                    <span id="scoreDraw">0</span>
+                </div>
+                <div class="stat">
+                    <span class="player-o" id="opponentLabel">Игрок (O)</span>
+                    <span id="scoreO">0</span>
+                </div>
+            </div>
+
+            <!-- Управление -->
+            <div class="controls">
+                <button class="btn btn-primary" id="restartBtn">Новая игра</button>
+                <button class="btn btn-secondary" id="resetScoreBtn">Сбросить счёт</button>
+            </div>
+
+            <!-- Модальное окно -->
+            <div class="modal" id="resultModal">
+                <div class="modal-content">
+                    <h2 id="modalTitle">Победа!</h2>
+                    <p id="modalMessage">Игрок X выиграл эту партию!</p>
+                    <button class="btn btn-primary" id="modalBtn">Играть ещё</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Сделано LeoLight для изучения Языков написано на: Python, HTML, JAVA, CSS 😊</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
